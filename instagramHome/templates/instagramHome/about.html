@@ -1,0 +1,28 @@
+{% extends "instagramHome/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="jumbotron mt-5 shadow-lg border border-warning">
+        <h1 class="display-4 text-center ">About <span><img src="{% static 'image/icons8-ink.png' %}" width="30" height="30" class="d-inline-block align-top" alt=""></span><span class="text-danger" style="font-family: 'Fredericka the Great', cursive;">HighGram</span></h1>
+        <hr class="my-4 bg-warning">
+        <p class="lead text-center "><span><img src="{% static 'image/icons8-ink.png' %}" width="30" height="30" class="d-inline-block align-top" alt=""></span><span class="h2 text-danger" style="font-family: 'Fredericka the Great', cursive;">HighGram</span> is an <span class="h3">Instagram</span> clone app.</p>
+        <hr class="my-4 bg-warning">
+        <div class="row contact_us text-center">
+            <div class="col-md-12">
+              <h3 class="" id="m2">CONTACT US.</h3>
+            </div>
+            <div class="col-md-12">
+                <a href="https://www.facebook.com/profile.php?id=100006079969163" class="btn" target="blank">
+                    <img src="{% static 'image/facebookicon.png' %}">
+                </a>
+                <a href="Tel: +254758657828" class="btn">
+                    <img src="{% static 'image/tellicon.png' %}">
+                </a>
+                <a href="https://wa.me/256756522631" class="btn" target="blank">
+                    <img src="{% static 'image/whatsappicon.png' %}">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "instagramUsers/base.html" %}
+{% block content %}
+
+    <h2>YOU HAVE BEEN LOGGED OUT!</h2>
+    <div class="border-top pt-3 card-footer">
+        <small class="text-muted"><a class="ml-2" href="{% url 'login' %}">LOG IN AGAIN.</a></small>
+    </div>
+{% endblock %}

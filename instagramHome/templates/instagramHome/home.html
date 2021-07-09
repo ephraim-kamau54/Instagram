@@ -1,0 +1,37 @@
+{% extends "instagramHome/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+{% for post in posts %}
+
+    <div class="card mb-3 mt-5">
+        <div class="card-header">
+            <h2 class="card-title"><a class="text-dark" href="#"><span><img class="img-thumbnail rounded-circle" src="{{ post.author.profile.image.url }}" style="height: 50px; width: 50px;"></span> {{ post.author }}</a></h2>
+        </div>
+        
+        <div class="card-body d-flex justify-content-center">
+            <a href="{% url 'post_detail' post.pk%}">
+                <h3 class="card-title"><span class="badge badge-info">{{ post.image_name }}</span></h3>
+                <img src="{{ post.image.url }}" class="card-img-top img-fluid" alt="{{post.image}}" style="max-height: 598.02px; max-width: 598.02px;">
+            </a>
+        </div>
+
+        <div class="card-footer">
+            <a href="{% url 'likes' post.pk%}">
+                <button type="button" class="btn ">
+                    <img src="{% static 'image/icons8-love.png' %}" width="30" height="30"  class="d-inline-block align-top" alt="">
+                    <span class="badge badge-light">{{post.likes}}</span>
+                </button>
+            </a>
+            
+            <h4 class="card-text">{{ post.image_caption }}</h4>
+            <p class="card-text"><small class="text-muted">Last updated {{post.last_modified}}</small></p>
+        </div>
+
+    </div>
+
+{% endfor %}
+</div>
+
+{% endblock %}

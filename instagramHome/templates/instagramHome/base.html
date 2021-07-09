@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'instagramUsers/styles.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+
+    {% if title %}
+        <title>HighGram - {{ title }}</title>
+    {% else %}
+        <title>HighGram</title>
+    {% endif %}
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light border-bottom border-warning">
+        <div class="container">
+            <a class="navbar-brand text-danger" href="{% url 'instagramHome-home' %}" style="font-family: 'Fredericka the Great', cursive;">
+                <img src="{% static 'image/icons8-ink.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                HighGram
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="{% url 'instagramHome-about' %}">About <span class="sr-only">(current)</span></a>
+              </div>
+              <div class="navbar-nav ml-auto">
+                <a class="navbar-brand " href="{% url 'add_post' %}">
+                    <img src="{% static 'image/icons8-add_new.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+            </div>
+            <div class="navbar-nav ml-auto">
+                <a class="navbar-brand " href="{% url 'profile' %}">
+                    <img src="{% static 'image/icons8-cat_profile.png' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid ">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} mt-2">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% block content %}{% endblock %}
+    </div>
+    
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

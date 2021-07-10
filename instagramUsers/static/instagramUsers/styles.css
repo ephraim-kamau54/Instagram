@@ -1,0 +1,9 @@
+body {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* font-size: 10px; */
+    background-image: url('https://images.unsplash.com/photo-1619855742089-58c9d9e13dbd?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjJ8fGZsb3dlciUyMGZpZWxkfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -46,7 +46,7 @@ git clone https://github.com/{username}/{repo_name}.git
 ## Running the application
 
 ```
-python manage.py server
+python manage.py runserver
 ```
 
 ## Endpoints Available

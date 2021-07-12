@@ -1,10 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here
 class Post(models.Model):
-    image = models.ImageField(upload_to='post_images')
-    image_name = models.CharField(max_length=100)
+    image = CloudinaryField('image')
+    title = models.CharField(max_length=100)
     image_caption = models.TextField(max_length=300)
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)

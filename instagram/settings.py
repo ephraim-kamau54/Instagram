@@ -14,17 +14,6 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
-
-# adding config
-cloudinary.config( 
-  cloud_name = "juniorinstagram", 
-  api_key = "232389687371234", 
-  api_secret = "BisOIzyQwpW8ltS_RPtlzAnBXSg" 
-)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -55,7 +44,6 @@ INSTALLED_APPS = [
     'instagramUsers',
     'crispy_forms',
     'tinymce',
-    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -148,7 +136,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

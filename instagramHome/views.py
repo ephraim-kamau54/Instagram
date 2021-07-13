@@ -31,7 +31,7 @@ def add_post(request):
         if form.is_valid():
             post = Post(
                 image = form.cleaned_data["image"],
-                image_name = form.cleaned_data["image_name"],
+                title = form.cleaned_data["title"],
                 image_caption = form.cleaned_data["image_caption"],
                 author = request.user
             )
